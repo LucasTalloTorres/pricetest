@@ -18,9 +18,17 @@ public class PriceTest {
         double price = 19.99;
         String currency = "EUR";
 
-        Price priceObject = new Price(brandId, startDate, endDate, priceList, productId, priority, price, currency);
+        Price priceObject = Price.builder()
+            .brandId(brandId)
+            .startDate(startDate)
+            .endDate(endDate)
+            .priceList(priceList)
+            .productId(productId)
+            .priority(priority)
+            .price(price)
+            .currency(currency)
+            .build();
 
-        // Assert
         Assertions.assertEquals(brandId, priceObject.getBrandId());
         Assertions.assertEquals(startDate, priceObject.getStartDate());
         Assertions.assertEquals(endDate, priceObject.getEndDate());
