@@ -48,7 +48,7 @@ public class PriceFilterServiceTest {
                 .brandId(1).priceList(2).productId(12345).priority(1).price(25.99).currency("EUR").build());
         prices.add(Price.builder()
                 .startDate(LocalDateTime.of(2022, 2, 1, 0, 0))
-                .endDate(LocalDateTime.of(2022, 2, 31, 23, 59))
+                .endDate(LocalDateTime.of(2022, 2, 28, 23, 59))
                 .brandId(2).priceList(3).productId(12345).priority(1).price(22.99).currency("EUR").build());
 
         Price result = priceFilterService.getActivePrice(prices, productId, brandId, dateTime);
