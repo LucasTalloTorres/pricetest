@@ -1,7 +1,7 @@
-package org.example.infraastructure.repository.mapper;
+package org.example.infrastructure.repository.mapper;
 
 import org.example.domain.model.Price;
-import org.example.infraastructure.repository.entity.PriceDbo;
+import org.example.infrastructure.repository.entity.PriceDbo;
 import org.mapstruct.Mapper;
 
 import java.util.List;

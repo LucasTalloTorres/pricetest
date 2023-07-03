@@ -1,6 +1,6 @@
-package org.example.infraastructure.repository;
+package org.example.infrastructure.repository;
 
-import org.example.infraastructure.repository.entity.PriceDbo;
+import org.example.infrastructure.repository.entity.PriceDbo;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
