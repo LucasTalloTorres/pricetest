@@ -1,0 +1,62 @@
+openapi: 3.0.3
+info:
+  title: Pricing Service API
+  version: 1.0.0
+tags:
+  - name: Prices
+paths:
+  /prices:
+    get:
+      tags:
+        - Prices
+      summary: Get price information
+      parameters:
+        - name: applicationDate
+          in: query
+          description: Date and time of the price application
+          required: true
+          schema:
+            type: string
+            format: date-time
+        - name: productId
+          in: query
+          description: Product ID
+          required: true
+          schema:
+            type: integer
+        - name: brandId
+          in: query
+          description: Brand ID
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: '#/components/schemas/price'
+components:
+  schemas:
+    price:
+      type: object
+      properties:
+        productId:
+          type: integer
+        brandId:
+          type: integer
+        priceList:
+          type: integer
+        startDate:
+          type: string
+          format: date-time
+        endDate:
+          type: string
+          format: date-time
+        price:
+          type: number
+          format: double
+        currency:
+          type: string
