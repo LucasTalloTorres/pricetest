@@ -39,19 +39,19 @@ public class PriceFilterServiceTest {
         List<Price> prices = new ArrayList<>();
 
         prices.add(Price.builder()
-                .startDate(LocalDateTime.of(2021, 12, 31, 0, 0))
+                .startDate(LocalDateTime.of(2021, 12, 1, 0, 0))
                 .endDate(LocalDateTime.of(2022, 1, 31, 23, 59))
-                .brandId(1).priceList(1).productId(12345).priority(1).price(19.99).currency("EUR").build());
+                .brandId(1).priceList(1).productId(12345).priority(0).price(29.99).currency("EUR").build());
         prices.add(Price.builder()
                 .startDate(LocalDateTime.of(2022, 1, 1, 0, 0))
                 .endDate(LocalDateTime.of(2022, 1, 31, 23, 59))
                 .brandId(1).priceList(2).productId(12345).priority(1).price(25.99).currency("EUR").build());
         prices.add(Price.builder()
-                .startDate(LocalDateTime.of(2022, 1, 1, 0, 0))
-                .endDate(LocalDateTime.of(2022, 1, 31, 23, 59))
-                .brandId(2).priceList(1).productId(12345).priority(1).price(22.99).currency("EUR").build());
+                .startDate(LocalDateTime.of(2022, 2, 1, 0, 0))
+                .endDate(LocalDateTime.of(2022, 2, 31, 23, 59))
+                .brandId(2).priceList(3).productId(12345).priority(1).price(22.99).currency("EUR").build());
 
         Price result = priceFilterService.getActivePrice(prices, productId, brandId, dateTime);
-        Assertions.assertEquals(19.99, result.getPrice());
+        Assertions.assertEquals(25.99, result.getPrice());
     }
 }
