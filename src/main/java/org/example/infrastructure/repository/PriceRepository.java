@@ -1,8 +1,8 @@
-package org.example.infraastructure.repository;
+package org.example.infrastructure.repository;
 
 import org.example.domain.model.Price;
-import org.example.infraastructure.repository.entity.PriceDbo;
-import org.example.infraastructure.repository.mapper.PriceDboMapper;
+import org.example.infrastructure.repository.entity.PriceDbo;
+import org.example.infrastructure.repository.mapper.PriceDboMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
