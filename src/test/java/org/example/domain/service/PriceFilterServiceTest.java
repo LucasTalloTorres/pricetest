@@ -53,5 +53,6 @@ public class PriceFilterServiceTest {
 
         Price result = priceFilterService.getActivePrice(prices, productId, brandId, dateTime);
         Assertions.assertEquals(25.99, result.getPrice());
+        Assertions.assertEquals(2, result.getPriceList());
     }
 }
