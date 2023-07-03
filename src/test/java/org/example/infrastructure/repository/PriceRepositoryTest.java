@@ -1,10 +1,8 @@
 package org.example.infrastructure.repository;
 
 import org.example.domain.model.Price;
-import org.example.infraastructure.repository.PriceJpaRepository;
-import org.example.infraastructure.repository.PriceRepository;
-import org.example.infraastructure.repository.entity.PriceDbo;
-import org.example.infraastructure.repository.mapper.PriceDboMapper;
+import org.example.infrastructure.repository.entity.PriceDbo;
+import org.example.infrastructure.repository.mapper.PriceDboMapper;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

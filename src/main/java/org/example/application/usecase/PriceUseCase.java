@@ -2,8 +2,7 @@ package org.example.application.usecase;
 
 import org.example.domain.model.Price;
 import org.example.domain.service.PriceFilterService;
-import org.example.infraastructure.repository.PriceJpaRepository;
-import org.example.infraastructure.repository.PriceRepository;
+import org.example.infrastructure.repository.PriceRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
