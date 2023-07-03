@@ -9,9 +9,9 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 @Repository
-public interface PriceJpaRepository extends CrudRepository<Integer, PriceDbo> {
+public interface PriceJpaRepository extends CrudRepository<PriceDbo, Integer> {
 
 
-    @Query("SELECT p FROM PriceDbo p WHERE p.productId=:id AND p.brandId=:brandId AND p.startDate<=:date AND p.endDate>:date")
+    @Query("SELECT p FROM PriceDbo p WHERE p.productId=:productId AND p.brandId=:brandId AND p.startDate<=:dateTime AND p.endDate>:dateTime")
     List<PriceDbo> findActivePrices(int productId, int brandId, LocalDateTime dateTime);
 }
