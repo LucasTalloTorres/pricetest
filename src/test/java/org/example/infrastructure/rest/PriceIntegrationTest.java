@@ -1,5 +1,6 @@
-package org.example.application;
+package org.example.infrastructure.rest;
 
+import org.example.application.Application;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -21,11 +22,21 @@ public class PriceIntegrationTest {
     @Test
     public void testGetPriceNotFound() throws Exception {
         mockMvc.perform(MockMvcRequestBuilders.get("/prices")
-                .param("applicationDate", "2020-06-14T10:00:00+00:00")
-                .param("productId", "99999")
-                .param("brandId", "9")
-                .accept(MediaType.APPLICATION_JSON))
+                        .param("applicationDate", "2020-06-14T10:00:00+00:00")
+                        .param("productId", "99999")
+                        .param("brandId", "9")
+                        .accept(MediaType.APPLICATION_JSON))
                 .andExpect(MockMvcResultMatchers.status().isNotFound());
+    }
+
+    @Test
+    public void testGetMethodArgumentNotValid() throws Exception {
+        mockMvc.perform(MockMvcRequestBuilders.get("/prices")
+                        .param("applicationDate", "nosoyunafecha")
+                        .param("productId", "99999")
+                        .param("brandId", "9")
+                        .accept(MediaType.APPLICATION_JSON))
+                .andExpect(MockMvcResultMatchers.status().isBadRequest());
     }
 
     @Test

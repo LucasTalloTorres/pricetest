@@ -10,7 +10,6 @@ import org.springframework.http.ResponseEntity;
 
 import java.time.LocalDateTime;
 
-import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 
 public class PriceControllerTest {
@@ -28,7 +27,7 @@ public class PriceControllerTest {
     }
 
     @Test
-    public void testGetPrices() throws Exception {
+    public void testGetPrices() {
         LocalDateTime requestLocalDateTime = LocalDateTime.now();
         int brandIdRequest = 1;
         int productIdRequest = 12345;

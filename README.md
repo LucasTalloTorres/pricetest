@@ -1,5 +1,5 @@
 # PriceTest - Spring boot project
-An hexagonal architecture project with Spring boot 3
+A hexagonal architecture project with Spring boot 3
 
 
 #### Getting Started
