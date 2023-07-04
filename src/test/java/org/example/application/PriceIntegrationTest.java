@@ -19,6 +19,16 @@ public class PriceIntegrationTest {
     private MockMvc mockMvc;
 
     @Test
+    public void testGetPriceNotFound() throws Exception {
+        mockMvc.perform(MockMvcRequestBuilders.get("/prices")
+                .param("applicationDate", "2020-06-14T10:00:00+00:00")
+                .param("productId", "99999")
+                .param("brandId", "9")
+                .accept(MediaType.APPLICATION_JSON))
+                .andExpect(MockMvcResultMatchers.status().isNotFound());
+    }
+
+    @Test
     public void testGetPrice1() throws Exception {
         mockMvc.perform(MockMvcRequestBuilders.get("/prices")
                         .param("applicationDate", "2020-06-14T10:00:00+00:00")
