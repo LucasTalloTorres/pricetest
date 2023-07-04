@@ -16,8 +16,7 @@ public class PriceFilterService {
                 .filter(price -> price.getProductId() == productId)
                 .filter(price -> price.getBrandId() == brandId)
                 .filter(price -> price.getStartDate().isBefore(dateTime) && price.getEndDate().isAfter(dateTime))
-                .sorted(Comparator.comparingInt(Price::getPriority).reversed())
-                .findFirst()
+                .max(Comparator.comparingInt(Price::getPriority))
                 .orElseThrow(() -> new PriceNotFoundException("Not found any price"));
     }
 }

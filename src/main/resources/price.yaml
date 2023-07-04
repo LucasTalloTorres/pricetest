@@ -36,21 +36,18 @@ paths:
           content:
             application/json:
               schema:
-                type: object
                 $ref: '#/components/schemas/price'
         '400':
           description: Bad Request
           content:
             application/json:
               schema:
-                type: object
                 $ref: '#/components/schemas/error'
         '404':
           description: Price not found
           content:
             application/json:
               schema:
-                type: object
                 $ref: '#/components/schemas/error'
 components:
   schemas:

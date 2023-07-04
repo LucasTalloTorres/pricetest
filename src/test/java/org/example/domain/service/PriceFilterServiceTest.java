@@ -1,7 +1,6 @@
 package org.example.domain.service;
 
 import org.example.domain.model.Price;
-import org.example.domain.model.PriceTest;
 import org.example.domain.service.exception.PriceNotFoundException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
