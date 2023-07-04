@@ -1,5 +1,6 @@
 package org.example.domain.service;
 
+import lombok.NoArgsConstructor;
 import org.example.domain.model.Price;
 import org.example.domain.service.exception.PriceNotFoundException;
 
@@ -7,6 +8,7 @@ import java.time.LocalDateTime;
 import java.util.Comparator;
 import java.util.List;
 
+@NoArgsConstructor
 public class PriceFilterService {
 
     public Price getActivePrice(List<Price> prices, int productId, int brandId, LocalDateTime dateTime) {
